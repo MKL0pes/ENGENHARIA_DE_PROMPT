@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora</title>
+  <!-- Fonte elegante do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Container principal centraliza a calculadora na tela -->
+  <div class="wrapper">
+
+    <div class="calculator" role="application" aria-label="Calculadora">
+
+      <!-- DISPLAY: área onde aparecem os números e resultados -->
+      <div class="display" aria-live="polite">
+        <!-- Linha superior: mostra a expressão que o usuário está montando -->
+        <div class="display__expression" id="expression" aria-label="Expressão">0</div>
+        <!-- Linha inferior (menor): mostra o resultado parcial ou operação anterior -->
+        <div class="display__history" id="history" aria-label="Histórico"></div>
+      </div>
+
+      <!-- TECLADO: grade com todos os botões -->
+      <div class="keypad" role="group" aria-label="Teclado da calculadora">
+
+        <!-- Linha 1: Limpar tudo, apagar último dígito, e dois operadores -->
+        <button class="btn btn--action" data-action="clear"    aria-label="Limpar tudo">C</button>
+        <button class="btn btn--action" data-action="backspace" aria-label="Apagar dígito">←</button>
+        <button class="btn btn--op"    data-value="%"          aria-label="Porcentagem">%</button>
+        <button class="btn btn--op"    data-value="÷"          aria-label="Dividir">÷</button>
+
+        <!-- Linha 2: números 7, 8, 9 e operador × -->
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn btn--op" data-value="×" aria-label="Multiplicar">×</button>
+
+        <!-- Linha 3: números 4, 5, 6 e operador − -->
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn btn--op" data-value="−" aria-label="Subtrair">−</button>
+
+        <!-- Linha 4: números 1, 2, 3 e operador + -->
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn btn--op" data-value="+" aria-label="Somar">+</button>
+
+        <!-- Linha 5: +/−, zero, vírgula e igual (ocupa 2 colunas) -->
+        <button class="btn btn--action" data-action="negate" aria-label="Trocar sinal">+/−</button>
+        <button class="btn" data-value="0">0</button>
+        <button class="btn" data-value="." aria-label="Decimal">.</button>
+        <button class="btn btn--equal" data-action="calculate" aria-label="Calcular">=</button>
+
+      </div><!-- /keypad -->
+    </div><!-- /calculator -->
+
+  </div><!-- /wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
